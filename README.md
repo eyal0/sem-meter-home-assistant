@@ -125,8 +125,57 @@ the meter arrive every 2 seconds.
 
 In my report, I see the number `1236` a lot!  That's actually the voltage recorded, `123.6V`.  Yours might be different.  All that matters is that you are getting messages.  Don't
 move on to the next step until this works.  Also, I blurred out the MAC Address of my device.  However, you'll need it!  It should be 12 digits and capital letters.  Mine starts
-with `94A9` but yours might be different.  You can also find this number as the 
+with `94A9` but yours might be different.  You can also find this number as the Serial Number of your device listed in the app.
 
 ### Configure your MQTT to read that received energy information and display it.
 
-Now that we've confirmed that Home Assistant is getting all the energy information, we want Home Assistant to display it.  
+Now that we've confirmed that Home Assistant is getting all the energy information, we want Home Assistant to display it.  You *could* click on the "Add MQTT device" link in the
+MQTT integration but you'd have to do about 95 of them and it would be tedious.  Instead, I've prepare a blueprint that will do it for you.  Click on this:
+
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Feyal0%2Fsem-meter-home-assistant%2Fblob%2Fmain%2Fcreate_fusion_energy_smart_home_energy_monitor_devices.yaml)
+
+This will add the "Create Fusion Energy Smart Home Energy Monitor Devices" blueprint to your blueprint dashboard in Home Assistant.  The blueprint is a sort of "wizard" that will
+guide you through the steps of adding all the MQTT devices.  In the blueprints dashboard, click on it.
+
+![2025-09-18_11-03](2025-08-18_12-52.png)
+![2025-09-18_11-03](2025-08-18_12-53.png)
+
+This will open up the blueprint.  Now you need to fill out all the information in there.  The Serial Number will be the Serial Number (aka MAC address) that we got from before.
+You can name your device whatever you want and you can change that later, too, but a convenient name might be the location that is supplied by the breaker panel.  For example, you
+might choose the name "Home".  For "Phases", you should enable the phases that you connected into your device with the bigger clamps.  Look in the app and see which ones of
+"A", "B", and "C" you have and enable those.
+
+For each Circuit, you need to provide a name and multiplier.  From your app, copy the names and multipliers into these circuits.
+
+![2025-09-18_11-01](2025-08-18_11-40.png)
+![2025-09-18_11-02](2025-08-18_11-42.png)
+![2025-09-18_11-02](2025-08-18_12-59.png)
+![2025-09-18_11-02](2025-08-18_13-00.png)
+![2025-09-18_11-02](2025-08-18_13-01.png)
+
+Do this for all 16 circuits.  If some of them are unused, you can just leave them alone.  You'll be able to change them later if you want.
+
+When you're done, click on "Save script" and just save it with the default name.
+(The button to save is called "Rename" but just click that one.)  If you have additional meters, open up the blueprint again and save another script with a different name.
+
+Now go to that script that you just made.  Click this link and you should find it:
+
+[![Open your Home Assistant instance and show your scripts.](https://my.home-assistant.io/badges/scripts.svg)](https://my.home-assistant.io/redirect/scripts/)
+
+If you click on the script, that will let you reconfigure the blueprint.  You can also reconfigure it as much as you want.  For now, just click on the 3 dots and run the script.
+
+![2025-09-18_11-02](2025-08-18_13-08.png)
+
+That will add all the entries into the MQTT integration.  Now open that integration and take a look:
+
+[![Open your Home Assistant instance and show an integration.](https://my.home-assistant.io/badges/integration.svg)](https://my.home-assistant.io/redirect/integration/?domain=mqtt)
+
+![2025-09-18_11-02](2025-08-18_13-24.png)
+
+The script created a bunch of sensors.  You should see, for each phase and circuit, information like voltage, power, energy in, etc.  
+
+![2025-09-18_11-02](2025-08-18_13-25.png)
+
+Now you're all done!  The information on that screen should match the info in your app and be updating about every 2 seconds.  You can click on any of them and change how they display,
+like to change the icon or the number of digits after the decimal point.  If you want to change any of them names, you can also go back to the script, click on it to modify it,
+and then run it again.
