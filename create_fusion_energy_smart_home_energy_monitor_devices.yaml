@@ -1,0 +1,516 @@
+
+#Based on https://community.home-assistant.io/t/smart-home-energy-monitor-by-fusion-energy/796329/14
+blueprint:
+  domain: script
+  name: Create Fusion Energy Smart Home Energy Monitor Devices
+  description: >-
+    After the Smart Home Energy Monitor is already configured to
+    send MQTT messages to Home Assistant, use this script to add
+    all the devices that you are tracking to Home Assistant.
+  author: eyal0
+  homeassistant:
+    min_version: "2024.6.0" # Because we'll use input sections.
+  input:
+    serial_number:
+      name: Serial Number
+      description: >-
+        It's the Serial Number of the Smart Home Energy Monitor.  It must be
+        12 characters that are hexadecimal (0 through 9 and A through F).
+        For example, 94A915BFC201.  (This is the same as the MAC address
+        of the device, which you might be able to find in your router's
+        configuration.  It may have dashes "-" or colons ":" in it but you
+        should remove those.)
+    device_name:
+      name: Device Name
+      description: What do you want to call this meter?
+      default: sem-meter
+    retain:
+      name: Retain
+      description: Keep the most recent measurement after reboot.
+      default: false
+      selector:
+        boolean:
+    phases:
+      name: Phases
+      icon: mdi:current-ac
+      description: Monitors for each phase
+      input:
+        phase_a:
+          name: Phase A
+          description: >-
+            Is Phase A being monitored?  Did you plug a clamp into 
+            "A" on your meter?
+          default: true
+          selector:
+           boolean:
+        phase_b:
+          name: Phase B
+          description: >-
+            Is Phase B being monitored?  Did you plug a clamp into 
+            "B" on your meter?
+          default: true
+          selector:
+           boolean:
+        phase_c:
+          name: Phase C
+          description: >-
+            Is Phase C being monitored?  Did you plug a clamp into 
+            "C" on your meter?
+          default: false
+          selector:
+           boolean:
+    circuit_1:
+      name: Circuit 1
+      input:
+        name_1:
+          name: "Name"
+          default: "circuit1"
+        multiplier_1:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_2:
+      name: Circuit 2
+      input:
+        name_2:
+          name: Name
+          default: "circuit2"
+        multiplier_2:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_3:
+      name: Circuit 3
+      input:
+        name_3:
+          name: Name
+          default: "circuit3"
+        multiplier_3:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_4:
+      name: Circuit 4
+      input:
+        name_4:
+          name: Name
+          default: "circuit4"
+        multiplier_4:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_5:
+      name: Circuit 5
+      input:
+        name_5:
+          name: Name
+          default: "circuit5"
+        multiplier_5:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_6:
+      name: Circuit 6
+      input:
+        name_6:
+          name: Name
+          default: "circuit6"
+        multiplier_6:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_7:
+      name: Circuit 7
+      input:
+        name_7:
+          name: Name
+          default: "circuit7"
+        multiplier_7:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_8:
+      name: Circuit 8
+      input:
+        name_8:
+          name: Name
+          default: "circuit8"
+        multiplier_8:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_9:
+      name: Circuit 9
+      input:
+        name_9:
+          name: Name
+          default: "circuit9"
+        multiplier_9:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_10:
+      name: Circuit 10
+      input:
+        name_10:
+          name: Name
+          default: "circuit10"
+        multiplier_10:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_11:
+      name: Circuit 11
+      input:
+        name_11:
+          name: Name
+          default: "circuit11"
+        multiplier_11:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_12:
+      name: Circuit 12
+      input:
+        name_12:
+          name: Name
+          default: "circuit12"
+        multiplier_12:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_13:
+      name: Circuit 13
+      input:
+        name_13:
+          name: Name
+          default: "circuit13"
+        multiplier_13:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_14:
+      name: Circuit 14
+      input:
+        name_14:
+          name: Name
+          default: "circuit14"
+        multiplier_14:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_15:
+      name: Circuit 15
+      input:
+        name_15:
+          name: Name
+          default: "circuit15"
+        multiplier_15:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+    circuit_16:
+      name: Circuit 16
+      input:
+        name_16:
+          name: Name
+          default: "circuit16"
+        multiplier_16:
+          name: Multiplier
+          selector:
+            number:
+              step: any
+              mode: box
+          default: 1.0
+variables:
+  serial_number: !input serial_number
+  topic: SEMMETER/{{serial_number}}/HA
+  device_name: !input device_name
+  retain: !input retain
+  phases:
+    a: !input phase_a
+    b: !input phase_b
+    c: !input phase_c
+  names:
+    - !input name_1
+    - !input name_2
+    - !input name_3
+    - !input name_4
+    - !input name_5
+    - !input name_6
+    - !input name_7
+    - !input name_8
+    - !input name_9
+    - !input name_10
+    - !input name_11
+    - !input name_12
+    - !input name_13
+    - !input name_14
+    - !input name_15
+    - !input name_16
+  multipliers:
+    - !input multiplier_1
+    - !input multiplier_2
+    - !input multiplier_3
+    - !input multiplier_4
+    - !input multiplier_5
+    - !input multiplier_6
+    - !input multiplier_7
+    - !input multiplier_8
+    - !input multiplier_9
+    - !input multiplier_10
+    - !input multiplier_11
+    - !input multiplier_12
+    - !input multiplier_13
+    - !input multiplier_14
+    - !input multiplier_15
+    - !input multiplier_16
+  device_block: >-
+    "device":{ "identifiers": ["{{serial_number}}"], "manufacturer": "Fusion
+    Energy","model": "SEM METER", "name": "{{ device_name }}" }
+  current_sensor: >-
+    "state_class":"measurement","device_class":"current","unit_of_measurement":"A","icon":"mdi:current-ac","state_topic":"{{topic}}",
+  voltage_sensor: >-
+    "state_class":"measurement","device_class":"voltage","unit_of_measurement":"V","icon":"mdi:flash","state_topic":"{{topic}}",
+  power_sensor: >-
+    "state_class":"measurement","device_class":"power","unit_of_measurement":"W","icon":"mdi:power-plug","state_topic":"{{topic}}",
+  energy_sensor: >-
+    "state_class":"total_increasing","device_class":"energy","unit_of_measurement":"kWh","icon":"mdi:counter","state_topic":"{{topic}}",
+sequence:
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: "{{ not serial_number | regex_match('[0-9A-F]{12}') }}"
+      sequence:
+        - service: notify.persistent_notification
+          data:
+            title: "Invalid Serial Number"
+            message: "Serial Number must be 12 characters.  Each one must be 0-9 or A-F, uppercase."
+        - stop: "Invalid Serial Number" # Stops the script execution
+    default: [] # No action if the condition passes
+  - action: mqtt.publish
+    data:
+      retain: "{{retain}}"
+      topic: homeassistant/sensor/{{serial_number}}_total_voltage/config
+      payload: >-
+        {"name": "Total Voltage",
+         "unique_id":"SEM{{serial_number}}_total_voltage",
+         "value_template": 
+          "{% raw %}{{(value_json.sense[16][0] + value_json.sense[17][0] + value_json.sense[18][0]) | float | multiply(0.1)}}{%endraw%}",
+        {{voltage_sensor}}
+        {{device_block}}}
+  - action: mqtt.publish
+    data:
+      retain: "{{retain}}"
+      topic: homeassistant/sensor/{{serial_number}}_total_current/config
+      payload: >-
+        {"name": "Total Current",
+         "unique_id": "SEM{{serial_number}}_total_current",
+         "value_template":
+           "{%raw%}{{(value_json.sense[16][1] + value_json.sense[17][1] + value_json.sense[18][1]) | float | multiply(0.01)}}{%endraw%}",
+        {{current_sensor}}
+        {{device_block}}}
+  - action: mqtt.publish
+    data:
+      retain: "{{retain}}"
+      topic: homeassistant/sensor/{{serial_number}}_total_power/config
+      payload: >-
+        {"name": "Total Power",
+         "unique_id": "SEM{{serial_number}}_total_power",
+         "value_template":
+          "{%raw%}{{(value_json.sense[16][2] + value_json.sense[17][2] + value_json.sense[18][2]) | float | multiply(0.01)}}{%endraw%}",
+         {{power_sensor}}
+         {{device_block}}}
+  - action: mqtt.publish
+    data:
+      retain: "{{retain}}"
+      topic: homeassistant/sensor/{{serial_number}}_total_energy_in/config
+      payload: >-
+        {"name": "Total Energy In",
+         "unique_id": "SEM{{serial_number}}_total_energy_in",
+         "value_template":
+          "{%raw%}{{(value_json.sense[16][3] + value_json.sense[17][3] + value_json.sense[18][3]) | float | multiply(0.001)}}{%endraw%}",
+         {{energy_sensor}}
+         {{device_block}}}
+  - action: mqtt.publish
+    data:
+      retain: "{{retain}}"
+      topic: homeassistant/sensor/{{serial_number}}_total_energy_out/config
+      payload: >-
+        {"name": "Total Energy Out",
+         "unique_id": "SEM{{serial_number}}_total_energy_out",
+         "value_template":
+          "{%raw%}{{(value_json.sense[16][4] + value_json.sense[17][4] + value_json.sense[18][4]) | float | multiply(0.001)}}{%endraw%}",
+         {{energy_sensor}}
+         {{device_block}}}
+  - repeat:
+      for_each:
+        - ["a", 16]
+        - ["b", 17]
+        - ["c", 18]
+      sequence:
+        - if:
+          - condition: template
+            value_template: "{{ phases[repeat.item[0]] }}"
+          then:
+            - action: mqtt.publish
+              data:
+                retain: "{{retain}}"
+                topic: homeassistant/sensor/{{serial_number}}_phase_{{repeat.item[0]}}_voltage/config
+                payload: >-
+                  {"name": "Phase {{repeat.item[0] | upper}} Voltage",
+                   "unique_id": "SEM{{serial_number}}_phase_{{repeat.item[0]}}_voltage",
+                   "value_template":
+                    "{%raw%}{{value_json.sense[{%endraw%}{{repeat.item[1]}}{%raw%}][0] | float | multiply(0.1)}}{%endraw%}",
+                   {{voltage_sensor}}
+                   {{device_block}}}
+            - action: mqtt.publish
+              data:
+                retain: "{{retain}}"
+                topic: homeassistant/sensor/{{serial_number}}_phase_{{repeat.item[0]}}_current/config
+                payload: >-
+                  {"name": "Phase {{repeat.item[0] | upper}} Current",
+                   "unique_id": "SEM{{serial_number}}_phase_{{repeat.item[0]}}_current",
+                   "value_template":
+                    "{%raw%}{{value_json.sense[{%endraw%}{{repeat.item[1]}}{%raw%}][1] | float | multiply(0.01)}}{%endraw%}",
+                   {{current_sensor}}
+                   {{device_block}}}
+            - action: mqtt.publish
+              data:
+                retain: "{{retain}}"
+                topic: homeassistant/sensor/{{serial_number}}_phase_{{repeat.item[0]}}_power/config
+                payload: >-
+                  {"name": "Phase {{repeat.item[0] | upper}} Power",
+                   "unique_id": "SEM{{serial_number}}_phase_{{repeat.item[0]}}_power",
+                   "value_template":
+                    "{%raw%}{{value_json.sense[{%endraw%}{{repeat.item[1]}}{%raw%}][2] | float | multiply(0.01)}}{%endraw%}",
+                   {{power_sensor}}
+                   {{device_block}}}
+            - action: mqtt.publish
+              data:
+                retain: "{{retain}}"
+                topic: homeassistant/sensor/{{serial_number}}_phase_{{repeat.item[0]}}_energy_in/config
+                payload: >-
+                  {"name": "Phase {{repeat.item[0] | upper}} Energy In",
+                   "unique_id": "SEM{{serial_number}}_phase_{{repeat.item[0]}}_energy_in",
+                   "value_template":
+                    "{%raw%}{{value_json.sense[{%endraw%}{{repeat.item[1]}}{%raw%}][3] | float | multiply(0.001)}}{%endraw%}",
+                   {{energy_sensor}}
+                   {{device_block}}}
+            - action: mqtt.publish
+              data:
+                retain: "{{retain}}"
+                topic: homeassistant/sensor/{{serial_number}}_phase_{{repeat.item[0]}}_energy_out/config
+                payload: >-
+                  {"name": "Phase {{repeat.item[0] | upper}} Energy Out",
+                   "unique_id": "SEM{{serial_number}}_phase_{{repeat.item[0]}}_energy_out",
+                   "value_template":
+                    "{%raw%}{{value_json.sense[{%endraw%}{{repeat.item[1]}}{%raw%}][4] | float | multiply(0.001)}}{%endraw%}",
+                   {{energy_sensor}}
+                   {{device_block}}}
+  - repeat:
+      until:
+        - condition: template
+          value_template: "{{repeat.index == 16}}"
+      sequence:
+        - action: mqtt.publish
+          data:
+            retain: "{{retain}}"
+            topic: homeassistant/sensor/{{serial_number}}_channel_{{repeat.index}}_voltage/config
+            payload: >-
+              {"name": "{{names[repeat.index-1]}} Voltage",
+               "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_voltage",
+               "value_template": 
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][0] | float | multiply(0.1*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+               {{voltage_sensor}}
+               {{device_block}}}
+        - action: mqtt.publish
+          data:
+            retain: "{{retain}}"
+            topic: homeassistant/sensor/{{serial_number}}_channel_{{repeat.index}}_current/config
+            payload: >-
+              {"name": "{{names[repeat.index-1]}} Current",
+               "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_current",
+               "value_template":
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][1] | float | multiply(0.01*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+               {{current_sensor}}
+               {{device_block}}}
+        - action: mqtt.publish
+          data:
+            retain: "{{retain}}"
+            topic: homeassistant/sensor/{{serial_number}}_channel_{{repeat.index}}_power/config
+            payload: >-
+              {"name": "{{names[repeat.index-1]}} Power",
+               "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_power",
+               "value_template":
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][2] | float | multiply(0.01*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+               {{power_sensor}}
+               {{device_block}}}
+        - action: mqtt.publish
+          data:
+            retain: "{{retain}}"
+            topic: homeassistant/sensor/{{serial_number}}_channel_{{repeat.index}}_energy_in/config
+            payload: >-
+               {"name": "{{names[repeat.index-1]}} Energy In",
+               "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_energy_in",
+               "value_template":
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][3] | float | multiply(0.001*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+               {{energy_sensor}}
+               {{device_block}}}
+        - action: mqtt.publish
+          data:
+            retain: "{{retain}}"
+            topic: homeassistant/sensor/{{serial_number}}_channel_{{repeat.index}}_energy_out/config
+            payload: >-
+               {"name": "{{names[repeat.index-1]}} Energy Out",
+               "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_energy_out",
+               "value_template":
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][4] | float | multiply(0.001*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+               {{energy_sensor}}
+               {{device_block}}}
+description: "When run, make all the MQTT entries for the energy monitor."
