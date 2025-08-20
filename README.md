@@ -1,14 +1,14 @@
-# How to setup Fusion Power Smart Home Energy Monitor in Home Assistant
+# How to setup Fusion Energy Smart Home Energy Monitor in Home Assistant
 
 ## Introduction
 
-The Fusion Power Smart Home Energy Monitor a reasonably-priced energy monitor for your home.  You can install it yourself in your breaker panel.  Here's what it looks like:
+The Fusion Energy Smart Home Energy Monitor a reasonably-priced energy monitor for your home.  You can install it yourself in your breaker panel.  Here's what it looks like:
 
-![Fusion Power Smart Home Energy Monitor](81Bm5loIXrL._SL1500_.jpg)
+![Fusion Energy Smart Home Energy Monitor](81Bm5loIXrL._SL1500_.jpg)
 
 You can install it into your breaker panel by yourself or by professional.  After installation, it looks like this:
 
-![Fusion Power Smart Home Energy Monitor installed](917BEz3aulL._SL1500_.jpg)
+![Fusion Energy Smart Home Energy Monitor installed](917BEz3aulL._SL1500_.jpg)
 
 After installation, you can then see the energy usage of your entire home in the free app on your phone.
 
