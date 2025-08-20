@@ -176,6 +176,23 @@ The script created a bunch of sensors.  You should see, for each phase and circu
 
 ![2025-09-18_11-02](2025-08-18_13-25.png)
 
-Now you're all done!  The information on that screen should match the info in your app and be updating about every 2 seconds.  You can click on any of them and change how they display,
+The information on that screen should match the info in your app and be updating about every 2 seconds.  You can click on any of them and change how they display,
 like to change the icon or the number of digits after the decimal point.  If you want to change any of them names, you can also go back to the script, click on it to modify it,
 and then run it again.
+
+### Optionally, add that information to the Energy dashboard in Home Assistant.
+
+If you want, you can also add all these new measurements to your energy dashboard.  The energy dashboard shows and hour-by-hour analysis of the energy that you use.  You can
+add all the new measurements that the meter is collecting.  First click this link:
+
+[![Open your Home Assistant instance and show your energy dashboard configuration.](https://my.home-assistant.io/badges/config_energy.svg)](https://my.home-assistant.io/redirect/config_energy/)
+
+In the section titled "Individual devices" you'll first add the new "Total Energy In".  That is the total energy that is going into the breaker panel.  Then you'll add the "Energy In"
+of each circuit that you are measuring.  When you add the circuit, set the "Upstream device" of the circuit to be the "Total Energy In" that you previously added.  This makes it so
+that the energy counted by the circuit is not double-counted as part of the energy measured in the "Total Energy In".
+
+![2025-09-18_11-02](2025-08-18_17-32.png)
+![2025-09-18_11-02](2025-08-18_17-33.png)
+
+The data on the energy dashboard is hourly so it will take some time until the data is part of the dashboard.  Also, the daily totals are calculated from midnight to midnight so
+a complete day's record won't be available until midnight has passed twice.
