@@ -26,8 +26,11 @@ blueprint:
       default: sem-meter
     retain:
       name: Retain
-      description: Keep the most recent measurement after reboot.
-      default: false
+      description: >-
+        Keep the most recent measurement after reboot.  If you don't
+        enable this then you should create an automation to re-run
+        this script every time Home Assistant starts.
+      default: true
       selector:
         boolean:
     phases:
