@@ -80,6 +80,7 @@ If you don't already have a username and password, click on "Configuration", the
 ```
 
 You can use any username and password.  The spaces and format of that text are important so make sure that you get it right.  You'll need the username and password for the next step.
+**If you have more than one SEM meter, each one must have its own username and password.  I don't know why.**
 
 ### Configure the meter to send energy usage information to your Home Assistant.
 
@@ -119,7 +120,8 @@ If you already have one, just open it:
 
 This integration is was talks to the broker that we previously setup.  It will get the information from the broker and display it.  First, let's make sure that the information is
 actually arriving from the device.  Click on the configuation gear icon and subscribe to the topic `SEMMETER/#`.  Then click on "Start listening".  You should see a report from
-the meter arrive every 2 seconds.
+the meter arrive every 2 seconds.  If you are on a SEM Meter version before 3.0.5 then you might only see a message every 30 seconds.  You should send email to serviceFE@outlook.com
+and tell them that you want to be on a newer version that will update home assistant every 2 seconds.
 
 ![2025-09-18_11-03](2025-08-18_12-31.png)
 ![2025-09-18_11-03](2025-08-18_12-36.png)
@@ -127,6 +129,9 @@ the meter arrive every 2 seconds.
 In my report, I see the number `1236` a lot!  That's actually the voltage recorded, `123.6V`.  Yours might be different.  All that matters is that you are getting messages.  Don't
 move on to the next step until this works.  Also, I blurred out the MAC Address of my device.  However, you'll need it!  It should be 12 digits and capital letters.  Mine starts
 with `94A9` but yours might be different.  You can also find this number as the Serial Number of your device listed in the app.
+
+Don't go past this step until you see these reports.  If it isn't work, try removing the username and password that you created in the MQTT broker add-on, restart it, and then make new ones
+and try again.  I don't know why the broker isn't reliably storing the username and password.
 
 ### Configure your MQTT to read that received energy information and display it.
 
