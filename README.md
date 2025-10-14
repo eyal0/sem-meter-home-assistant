@@ -42,7 +42,8 @@ If you are paranoid about letting the device and app have access to your Wifi, y
 Home Assistant on your local wifi without ever accessing the internet again.  You just need the internet this one time to get the latest firmware.  You could make a temporary wifi
 network for the device, let the device use it, and then delete that network or change the password on it.  You won't need the internet again.
 
-To get the latest firmware, go into the configuration of the device and do a firmware update.
+To get the latest firmware, go into the configuration of the device and do a firmware update.  It might take a while until the new version number shows up in the settings.  **That's
+true for most of the settings: After you set them, they don't appear very soon.  Wait a bit, perhaps even quit the app and start it again, and then you will see the result.**
 
 ![2025-09-18_11-01](2025-08-18_11-40.png)
 ![2025-09-18_11-02](2025-08-18_11-42.png)
