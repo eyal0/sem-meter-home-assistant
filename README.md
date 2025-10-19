@@ -37,6 +37,8 @@ by yourself then you are qualified to do this work yourself, too.  It's not too 
 After you install the meter, you'll install the app according to the instructions.  When you're all done, you should be able to see your energy usage in the app.  Don't go
 on to the next step until this step is done.  Also, you should connect your app to your wifi and make sure to get the latest version of the software into the device.  This is
 because the latest version sends MQTT messages more frequently that the old version (every 2 seconds instead of every 30).  That will make the information more useful for you.
+If you can't get version 3.0.5, you should send email to serviceFE@outlook.com and tell them that your serial number and that you want to be on a newer version that will update
+home assistant every 2 seconds.  They will push the new version to you over the internet.
 
 If you are paranoid about letting the device and app have access to your Wifi, you'll be able to isolate the device from accessing the internet later on.  The device can work with
 Home Assistant on your local wifi without ever accessing the internet again.  You just need the internet this one time to get the latest firmware.  You could make a temporary wifi
@@ -71,8 +73,6 @@ If you don't already have a username and password, click on "Configuration", the
 
 ![2025-09-18_11-03](2025-08-18_12-01.png)
 ![2025-09-18_11-03](2025-08-18_12-02.png)
-
-
 
 ```
 - username: mqtt
