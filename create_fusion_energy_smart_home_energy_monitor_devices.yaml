@@ -480,7 +480,7 @@ sequence:
               {"name": "{{names[repeat.index-1]}} Current",
                "unique_id": "SEM{{serial_number}}_channel_{{repeat.index}}_current",
                "value_template":
-                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][1] | float | multiply(0.01*{%endraw%}{{multipliers[repeat.index-1]}}{%raw%})}}{%endraw%}",
+                "{%raw%}{{value_json.sense[{%endraw%}{{repeat.index-1}}{%raw%}][1] | float | multiply(0.01)}}{%endraw%}",
                {{current_sensor}}
                {{device_block}}}
         - action: mqtt.publish
